@@ -14,7 +14,7 @@ def plot_fractal(xmin, xmax, ymin, ymax, width, height, max_iter):
     fig, ax = plt.subplots()
     im = ax.imshow(image, cmap='hot', extent=(xmin, xmax, ymin, ymax))
     plt.colorbar(im)
-    plt.show(block=False)  # No bloquear la ejecución para permitir la visualización gradual
+    plt.show(block=False)
 
     for x in range(width):
         for y in range(height):
@@ -26,7 +26,7 @@ def plot_fractal(xmin, xmax, ymin, ymax, width, height, max_iter):
             image[x, y] = color
         im.set_data(image)
         plt.draw()
-        plt.pause(0.001)  # Pausa para ver la actualización gradual del fractal
+        plt.pause(0.001)
 
     plt.show()
 
@@ -36,5 +36,5 @@ ymin, ymax = -2, 2
 width, height = 800, 800
 max_iter = 1200
 
-# Dibujar el fractal de Mandelbrot
+# Dibujar el fractal
 plot_fractal(xmin, xmax, ymin, ymax, width, height, max_iter)
